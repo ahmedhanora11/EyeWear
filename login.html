@@ -2,7 +2,7 @@
 <html lang="en">
 
 <script>
-    let log = location.search.split('=')[1]
+    const log = location.search.split('=')[1]
     if (log === 'off') {
         sessionStorage.clear()
     }
@@ -136,6 +136,15 @@
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/custom.js"></script>
     <script>
+        if (log === 'off') {
+            Swal.fire({
+                icon: 'success',
+                title: 'Logging out done successfully',
+                showConfirmButton: false,
+                timer: 4000
+            })
+        }
+
         $('#log').submit(function(e) {
             e.preventDefault();
             let email = $('#email').val();
