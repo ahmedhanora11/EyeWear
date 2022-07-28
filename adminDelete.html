@@ -66,8 +66,8 @@
                     <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11">
                         <nav style="width: 100% !important;" class="navigation navbar navbar-expand-md navbar-dark">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
                             <p style="padding-right: 30%;" id="admin">Welcome Admin</p>
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
@@ -112,18 +112,22 @@
         </div>
     </div>
     <br>
+    <div>
 
-    <body style="text-align: center;">
-        <form class="newForm" id="deleteglass">
-            <br>
+        <body style="text-align: center;">
+            <form class="newForm" id="deleteglass">
+                <br>
 
-            <label class="newLabel">Glass ID:
-            <select class="newLabel2" id="sunId"></select>
-            <br><br>
-            <button class="read_more" type="submit">Delete Glass</button>
+                <label class="newLabel">Glass ID:
+                <select class="newLabel2" id="sunId"></select>
+                <br><br>
+                <button class="read_more" type="submit">Delete Glass</button>
 
-            <br><br>
+                <br><br>
         </form>
+    </body></div>
+
+    <br><br>
     <!--  footer -->
     <footer>
         <div class="footer">
@@ -133,7 +137,9 @@
                         <ul class="location_icon">
                             <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><br> Location</li>
                             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a><br> +966544984525</li>
-                            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br> EyeWearCo@gmail.com</li>
+                            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a><br>
+                                EyeWearCo@gmail.com
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -152,19 +158,19 @@
     <!-- end footer -->
 </body>
 
-    <!-- Javascript files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery-3.0.0.min.js"></script>
+<!-- Javascript files-->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2.min.css">
-    <!-- sidebar -->
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/custom.js"></script>
+<!-- sidebar -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/custom.js"></script>
 
-    <script>
+<script>
     $('#admin').text('Welcome ' + user)
     let formData = {
         table: "sunglasses",
@@ -178,7 +184,7 @@
         data: form,
         dataType: "json",
 
-        success: function(data, status, xhr) {
+        success: function (data, status, xhr) {
             let options = data.map((x, i) => {
                 let item = document.createElement("option");
                 item.innerHTML = x['id'];
@@ -187,7 +193,7 @@
             $('#sunId').append(options);
             console.log(data);
         },
-        error: function(xhr, resp, text) {
+        error: function (xhr, resp, text) {
             alert("error " + xhr.error + ", " + resp + ", " + text);
         },
     });
@@ -233,5 +239,8 @@
                 },
             });
         });
-    </script>
+    });
+</script>
+
+
 </html>

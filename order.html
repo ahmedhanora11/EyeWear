@@ -236,9 +236,20 @@
 
             success: function(data, status, xhr) {
                 if (data.rowcount > 0) {
-                    alert(data.status);
+                    Swal.fire({
+                            icon: 'success',
+                            title: 'Order created successfully',
+                            showConfirmButton: false,
+                            timer: 2750
+                        })
+                        return;
                 } else {
-                    alert("fail" + data.message);
+                    Swal.fire({
+                            icon: 'error',
+                            title: 'Fail, try again',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
                 }
             },
             error: function(xhr, resp, text) {
